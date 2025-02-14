@@ -12,25 +12,25 @@ public class Pizza implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String sabor;
+    private String flavor;
     private Integer size;
     private Double price;
 
-    public Pizza(Long id , String sabor, Integer size, Double price) {
+    public Pizza(Long id , String flavor, Integer size, Double price) {
         this.id = id;
-        this.sabor = sabor;
+        this.flavor = flavor;
         this.size = size;
         this.price = price;
     }
 
     public Pizza(){}
 
-    public String getSabor() {
-        return sabor;
+    public String getFlavor() {
+        return flavor;
     }
 
-    public void setSabor(String sabor) {
-        this.sabor = sabor;
+    public void setFlavor(String flavor) {
+        this.flavor = flavor;
     }
 
     public Integer getSize() {
