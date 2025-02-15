@@ -4,8 +4,11 @@ import com.example.demo.entities.Order;
 import com.example.demo.enuns.StatusOrder;
 import com.example.demo.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 
+@Service
 public class OrderServices {
 
     @Autowired

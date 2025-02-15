@@ -7,11 +7,9 @@ import java.util.List;
 
 public class OrderDTO {
     private List<Pizza> pizzasList;
-    private User user;
 
     public OrderDTO(Order order) {
         this.pizzasList = pizzasList;
-        this.user = user;
     }
 
     public List<Pizza> getPizzasList() {
@@ -20,13 +18,5 @@ public class OrderDTO {
 
     public void setPizzasList(List<Pizza> pizzasList) {
         this.pizzasList = pizzasList;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }

@@ -25,13 +25,6 @@ public class User implements Serializable {
     }
 
     public User(){}
-    public List<Order> getOrdes() {
-        return ordes;
-    }
-
-    public void setOrdes(List<Order> ordes) {
-        this.ordes = ordes;
-    }
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Order> ordes;
