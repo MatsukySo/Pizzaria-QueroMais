@@ -1,5 +1,6 @@
 package com.example.demo.entities;
 
+import com.example.demo.enuns.StatusOrder;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -26,15 +27,16 @@ public class Order implements Serializable {
             joinColumns = @JoinColumn(name = "order_id"),
             inverseJoinColumns = @JoinColumn(name = "pizza_id")
     )
-    private List<Pizza> pizza;
+    private List<Pizza> pizzaList;
 
     private Date hourOrder;
-
-    public Order(Long id, User user, List<Pizza> pizza, Date hourOrder) {
+    private StatusOrder statusOrder;
+    public Order(Long id, User user, List<Pizza> pizzaList, Date hourOrder, StatusOrder statusOrder) {
         this.id = id;
         this.user = user;
-        this.pizza = pizza;
+        this.pizzaList = pizzaList;
         this.hourOrder = hourOrder;
+        this.statusOrder = statusOrder;
     }
 
     public Order(){}
@@ -75,10 +77,18 @@ public class Order implements Serializable {
     }
 
     public void setPizza(List<Pizza> pizza) {
-        this.pizza = pizza;
+        this.pizzaList = pizza;
     }
 
     public List<Pizza> getPizza() {
-        return pizza;
+        return pizzaList;
+    }
+
+    public StatusOrder getStatusOrder() {
+        return statusOrder;
+    }
+
+    public void setStatusOrder(StatusOrder statusOrder) {
+        this.statusOrder = statusOrder;
     }
 }

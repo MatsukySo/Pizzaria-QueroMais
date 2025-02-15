@@ -13,10 +13,10 @@ public class Pizza implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String flavor;
-    private Integer size;
+    private String size;
     private Double price;
 
-    public Pizza(Long id , String flavor, Integer size, Double price) {
+    public Pizza(Long id , String flavor, String size, Double price) {
         this.id = id;
         this.flavor = flavor;
         this.size = size;
@@ -33,11 +33,11 @@ public class Pizza implements Serializable {
         this.flavor = flavor;
     }
 
-    public Integer getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(Integer size) {
+    public void setSize(String size) {
         this.size = size;
     }
 

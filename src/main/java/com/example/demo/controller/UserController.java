@@ -20,8 +20,8 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<String> saveUser(@RequestBody User user){
-        Boolean saved = userService.save(user);
-        if(saved){
+        Boolean saving = userService.save(user);
+        if(saving){
             return ResponseEntity.ok("Success!");
         }
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed");
@@ -57,7 +57,7 @@ public class UserController {
         if(update){
             return ResponseEntity.ok("Success");
         }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed");
+        return ResponseEntity.notFound().build();
     }
 
     @PutMapping("/{id}/address")
@@ -67,7 +67,7 @@ public class UserController {
         if(update){
             return ResponseEntity.ok("Success");
         }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed");
+        return ResponseEntity.notFound().build();
     }
 
     @PutMapping("/{id}/phone")
@@ -77,6 +77,6 @@ public class UserController {
         if(update){
             return ResponseEntity.ok("Success");
         }
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Failed");
+        return ResponseEntity.notFound().build();
     }
 }

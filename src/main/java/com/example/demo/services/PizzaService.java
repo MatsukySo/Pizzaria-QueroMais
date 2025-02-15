@@ -42,7 +42,7 @@ public class PizzaService {
         return false;
     }
 
-    public Boolean updateSize(Long id, Integer size){
+    public Boolean updateSize(Long id, String size){
         Pizza pizza = pizzaRepository.findById(id).orElse(null);
         if(pizza != null){
             pizza.setSize(size);
