@@ -12,6 +12,7 @@ import java.util.Objects;
 @Table(name="tb_orders")
 public class Order implements Serializable {
     private static final long serialVersionUID = 1L;
+    private Double sum = 0.0;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,6 +32,7 @@ public class Order implements Serializable {
 
     private Date hourOrder;
     private StatusOrder statusOrder;
+
     public Order(Long id, User user, List<Pizza> pizzaList, Date hourOrder, StatusOrder statusOrder) {
         this.id = id;
         this.user = user;
@@ -64,7 +66,6 @@ public class Order implements Serializable {
         this.hourOrder = hourOrder;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Order order)) return false;
@@ -90,5 +91,12 @@ public class Order implements Serializable {
 
     public void setStatusOrder(StatusOrder statusOrder) {
         this.statusOrder = statusOrder;
+    }
+
+    public Double pizzaSum(){
+        for(Pizza pizza : pizzaList){
+            sum += pizza.getPrice();
+        }
+        return sum;
     }
 }

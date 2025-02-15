@@ -7,16 +7,18 @@ import java.util.List;
 
 public class OrderDTO {
     private List<Pizza> pizzasList;
+    private Double sum;
 
     public OrderDTO(Order order) {
         this.pizzasList = pizzasList;
+        this.sum = sum;
     }
 
     public List<Pizza> getPizzasList() {
         return pizzasList;
     }
 
-    public void setPizzasList(List<Pizza> pizzasList) {
-        this.pizzasList = pizzasList;
+    public Double getSum() {
+        return sum;
     }
 }

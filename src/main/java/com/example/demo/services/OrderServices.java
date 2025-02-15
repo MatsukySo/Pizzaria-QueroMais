@@ -15,6 +15,7 @@ public class OrderServices {
     private OrderRepository orderRepository;
 
     public Boolean save(Order order){
+        order.pizzaSum();
         orderRepository.save(order);
         return true;
     }
@@ -42,5 +43,8 @@ public class OrderServices {
             return true;
         }
         return false;
+
     }
+
+
 }
